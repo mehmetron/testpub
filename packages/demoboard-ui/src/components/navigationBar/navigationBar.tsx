@@ -7,7 +7,7 @@
 
 import React, { useCallback } from 'react'
 import styled, { css } from 'styled-components'
-import { DemoboardProject } from '@frontarm/demoboard-core'
+import { DemoboardProject } from '@mehmetrontest/demoboard-core'
 import { IconButton } from '../iconButton'
 import { Input } from '../input'
 import { dimensions } from '../../constants'

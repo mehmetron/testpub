@@ -6,7 +6,7 @@
  */
 
 import * as Comlink from 'comlink'
-import { DemoboardWorker } from '@frontarm/demoboard-worker'
+import { DemoboardWorker } from '@mehmetrontest/demoboard-worker'
 
 export interface DemoboardWorkerURLs {
   worker: string

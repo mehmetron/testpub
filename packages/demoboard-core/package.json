@@ -1,5 +1,5 @@
 {
-  "name": "@frontarm/demoboard-core",
+  "name": "@mehmetrontest/demoboard-core",
   "version": "0.1.32",
   "description": "Embeddable code editor",
   "author": "James K Nelson <james@jamesknelson.com>",
@@ -18,9 +18,9 @@
     "test:watch": "yarn test --watch"
   },
   "dependencies": {
-    "@frontarm/demoboard-messaging": "^0.1.32",
-    "@frontarm/demoboard-runtime": "^0.1.32",
-    "@frontarm/demoboard-worker": "^0.1.32",
+    "@mehmetrontest/demoboard-messaging": "^0.1.32",
+    "@mehmetrontest/demoboard-runtime": "^0.1.32",
+    "@mehmetrontest/demoboard-worker": "^0.1.32",
     "automerge": "^0.12.1",
     "comlink": "^4.0.5",
     "exenv": "^1.2.2",
@@ -51,5 +51,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "74f8151a1dc82f12970aeb6e48b398c6e385ddef"
+  "gitHead": "6d0a81ca3f4e684b4a7568f0d57ba4c4ccfbb622"
 }

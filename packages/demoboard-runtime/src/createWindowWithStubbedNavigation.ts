@@ -1,4 +1,4 @@
-import { Host } from '@frontarm/demoboard-messaging'
+import { Host } from '@mehmetrontest/demoboard-messaging'
 
 export interface NavigationLocation {
   href: string

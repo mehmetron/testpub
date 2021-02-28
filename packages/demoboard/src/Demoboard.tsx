@@ -12,8 +12,8 @@ import {
   useDemoboardInstance,
   useDemoboardProject,
   UseDemoboardProjectOptions,
-} from '@frontarm/demoboard-core'
-import { DemoboardUI, DemoboardUIGlobalStyles } from '@frontarm/demoboard-ui'
+} from '@mehmetrontest/demoboard-core'
+import { DemoboardUI, DemoboardUIGlobalStyles } from '@mehmetrontest/demoboard-ui'
 import CodeMirror from './CodeMirror'
 
 export function DemoboardGlobalStyles() {

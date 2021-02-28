@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'styled-components/macro'
-import { Demoboard, DemoboardGlobalStyles } from '@frontarm/demoboard'
-import DemoboardWorkerProvider from '@frontarm/demoboard-worker-provider'
+import { Demoboard, DemoboardGlobalStyles } from '@mehmetrontest/demoboard'
+import DemoboardWorkerProvider from '@mehmetrontest/demoboard-worker-provider'
 import './App.css'
 
 const rawExample = trim`
@@ -56,7 +56,7 @@ I'm a rebass button!
 `
 
 const demoboardExample = trim`
-import { Demoboard, DemoboardGlobalStyles } from '@frontarm/demoboard'
+import { Demoboard, DemoboardGlobalStyles } from '@mehmetrontest/demoboard'
 
 # Welcome to Demoboard
 

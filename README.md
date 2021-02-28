@@ -10,12 +10,12 @@ Getting Started
 Demoboard can be embedded within any app built with Webpack -- including apps built with Create React App, Gatsby, Next.js, etc.
 
 ```bash
-yarn add @frontarm/demoboard
+yarn add @mehmetrontest/demoboard
 ```
 
 ```js
 import React from 'react'
-import { Demoboard, DemoboardGlobalStyles } from '@frontarm/demoboard'
+import { Demoboard, DemoboardGlobalStyles } from '@mehmetrontest/demoboard'
 
 const initialSources = {
   '/index.js': `

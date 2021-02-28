@@ -8,7 +8,7 @@
 import {
   DemoboardBuildError,
   DemoboardTransformError,
-} from '@frontarm/demoboard-core/src/build/DemoboardBuildErrors'
+} from '@mehmetrontest/demoboard-core/src/build/DemoboardBuildErrors'
 import { DemoboardWorkerTransformedModule } from './DemoboardWorkerTransformedModule'
 import { DemoboardWorkerTransformFetchOptions } from './DemoboardWorkerTransformFetchOptions'
 

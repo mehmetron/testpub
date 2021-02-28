@@ -5,7 +5,7 @@
  * in the LICENSE file in the root directory of this source tree.
  */
 
-import { DemoboardWorker } from '@frontarm/demoboard-worker'
+import { DemoboardWorker } from '@mehmetrontest/demoboard-worker'
 
 import * as React from 'react'
 

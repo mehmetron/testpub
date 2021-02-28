@@ -19,7 +19,7 @@ const config = {
     format: 'umd',
     name: 'setupDemoboardRuntime',
     sourcemap: true,
-    footer: `\n//# sourceURL=frontarm.com`,
+    footer: `\n//# sourceURL=mehmetrontest.com`,
   },
   onwarn: function(warning) {
     // Suppress warning caused by TypeScript classes using "this"

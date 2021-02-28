@@ -11,7 +11,7 @@ import { useRoverState } from 'reakit/Rover'
 import { useId } from 'reakit-utils'
 import { Tab, TabList } from 'reakit/Tab'
 import { colors, dimensions, fonts, radii, shadows } from '../../constants'
-import { DemoboardProject } from '@frontarm/demoboard-core'
+import { DemoboardProject } from '@mehmetrontest/demoboard-core'
 
 const StyledTabList = styled(TabList)`
   align-items: center;

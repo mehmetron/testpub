@@ -7,12 +7,12 @@
 
 import * as Comlink from 'comlink'
 import * as React from 'react'
-import { DemoboardWorkerContext } from '@frontarm/demoboard-core'
-import { DemoboardWorker as IDemoboardWorker } from '@frontarm/demoboard-worker'
+import { DemoboardWorkerContext } from '@mehmetrontest/demoboard-core'
+import { DemoboardWorker as IDemoboardWorker } from '@mehmetrontest/demoboard-worker'
 
 function createWorker() {
   // eslint-disable-next-line import/no-webpack-loader-syntax
-  let mod = require('worker-loader!@frontarm/demoboard-worker')
+  let mod = require('worker-loader!@mehmetrontest/demoboard-worker')
   const DemoboardWorker = new mod()
   return Comlink.wrap(DemoboardWorker)
 }

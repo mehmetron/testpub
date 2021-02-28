@@ -48,7 +48,7 @@ export const TransformError = () => (
       lineNumber: '2',
       message: `unknown: Unterminated string constant (2:17)
 
-  1 | import { Demoboard, DemoboardGlobalStyles } from '@frontarm/demoboard'
+  1 | import { Demoboard, DemoboardGlobalStyles } from '@mehmetrontest/demoboard'
 > 2 | import test from './test
     |                  ^`,
       name: 'TransformError',

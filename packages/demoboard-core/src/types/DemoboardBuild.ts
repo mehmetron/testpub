@@ -9,7 +9,7 @@ import {
   DemoboardWorkerBuildRule,
   DemoboardWorkerTransformFetchOptions,
   DemoboardWorkerTransformedModule,
-} from '@frontarm/demoboard-worker'
+} from '@mehmetrontest/demoboard-worker'
 
 export type DemoboardBuildStatus = 'busy' | 'error' | 'success'
 
