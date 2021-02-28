@@ -1,6 +1,6 @@
 {
   "name": "@mehmetrontest/demoboard",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "description": "Embeddable code editor",
   "author": "James K Nelson <james@jamesknelson.com>",
   "license": "Apache-2.0",
@@ -18,8 +18,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@mehmetrontest/demoboard-core": "^0.1.32",
-    "@mehmetrontest/demoboard-ui": "^0.1.32",
+    "@mehmetrontest/demoboard-core": "^0.1.33",
+    "@mehmetrontest/demoboard-ui": "^0.1.33",
     "tslib": "1.10.0"
   },
   "publishConfig": {

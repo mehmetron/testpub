@@ -1,6 +1,6 @@
 {
   "name": "@mehmetrontest/demoboard-runtime",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "description": "Embeddable code editor runtime",
   "author": "James K Nelson <james@jamesknelson.com>",
   "license": "Apache-2.0",
@@ -16,7 +16,7 @@
     "prepare": "yarn run clean && yarn run build && yarn run build:production && cp src/container.html dist/container.html"
   },
   "dependencies": {
-    "@mehmetrontest/demoboard-messaging": "^0.1.32",
+    "@mehmetrontest/demoboard-messaging": "^0.1.33",
     "polestar": "^0.1.2",
     "regenerator-runtime": "^0.12.1",
     "replicator": "^1.0.3"

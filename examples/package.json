@@ -1,9 +1,9 @@
 {
   "name": "examples",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "private": true,
   "dependencies": {
-    "@mehmetrontest/demoboard-core": "^0.1.32",
+    "@mehmetrontest/demoboard-core": "^0.1.33",
     "@types/finalhandler": "^1.1.0",
     "@types/serve-static": "^1.13.3",
     "finalhandler": "^1.1.2",

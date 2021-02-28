@@ -1,6 +1,6 @@
 {
   "name": "@mehmetrontest/demoboard-core",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "description": "Embeddable code editor",
   "author": "James K Nelson <james@jamesknelson.com>",
   "license": "Apache-2.0",
@@ -18,9 +18,9 @@
     "test:watch": "yarn test --watch"
   },
   "dependencies": {
-    "@mehmetrontest/demoboard-messaging": "^0.1.32",
-    "@mehmetrontest/demoboard-runtime": "^0.1.32",
-    "@mehmetrontest/demoboard-worker": "^0.1.32",
+    "@mehmetrontest/demoboard-messaging": "^0.1.33",
+    "@mehmetrontest/demoboard-runtime": "^0.1.33",
+    "@mehmetrontest/demoboard-worker": "^0.1.33",
     "automerge": "^0.12.1",
     "comlink": "^4.0.5",
     "exenv": "^1.2.2",

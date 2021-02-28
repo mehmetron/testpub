@@ -1,6 +1,6 @@
 {
   "name": "@mehmetrontest/demoboard-ui",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "description": "Embeddable code editor",
   "author": "James K Nelson <james@jamesknelson.com>",
   "license": "Apache-2.0",
@@ -19,7 +19,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@mehmetrontest/demoboard-core": "^0.1.32",
+    "@mehmetrontest/demoboard-core": "^0.1.33",
     "codemirror": "^5.49.2",
     "exenv": "^1.2.2",
     "json-stringify-safe": "^5.0.1",
