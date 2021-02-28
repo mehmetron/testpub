@@ -25,10 +25,10 @@ const extensions = ['.js', '.jsx', '.md', '.mdx']
 // be accessed at runtime, SO WE DON'T NEED TO RUN THE ENTIRE PACKAGE'S SOURCE
 // THROUGH BABEL BEFORE RUNNING IT. This improves performance... significantly.
 const UMD: { [name: string]: (version: string) => string } = {
-  '@mehmetrontest/demoboard': version =>
+  '@mehmetron/demoboard': version =>
     process.env.NODE_ENV === 'production' || process.env.UMD
-      ? `https://unpkg.com/@mehmetrontest/demoboard${version}/dist/umd/demoboard.js`
-      : require('!!file-loader!@mehmetrontest/demoboard/dist/umd/demoboard.js'),
+      ? `https://unpkg.com/@mehmetron/demoboard${version}/dist/umd/demoboard.js`
+      : require('!!file-loader!@mehmetron/demoboard/dist/umd/demoboard.js'),
   history: version => `https://unpkg.com/history${version}/umd/history.js`,
   navi: version => `https://unpkg.com/navi${version}/dist/umd/navi.js`,
   react: version =>

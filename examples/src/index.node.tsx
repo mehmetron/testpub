@@ -8,7 +8,7 @@ import { renderToString } from 'react-dom/server'
 import serveStatic from 'serve-static'
 import { ServerStyleSheet } from 'styled-components/macro'
 import App from './App'
-import { DemoboardGlobalStyles } from '@mehmetrontest/demoboard'
+import { DemoboardGlobalStyles } from '@mehmetron/demoboard'
 
 const renderer = async (request: any, response: any) => {
   let sheet: ServerStyleSheet | undefined
@@ -65,7 +65,7 @@ function serveDependencies() {
   // Serve the demoboard runtime on a separate origin
   const demoboardContainerPort = 5000
   const demoboardRuntimeDistPath = path.dirname(
-    require.resolve('@mehmetrontest/demoboard-runtime'),
+    require.resolve('@mehmetron/demoboard-runtime'),
   )
   console.log(
     chalk.cyan(

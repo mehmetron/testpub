@@ -6,8 +6,8 @@
  */
 /* eslint-disable import/no-webpack-loader-syntax */
 
-import { version as runtimeVersion } from '@mehmetrontest/demoboard-runtime/package.json'
-import { version as workerVersion } from '@mehmetrontest/demoboard-worker/package.json'
+import { version as runtimeVersion } from '@mehmetron/demoboard-runtime/package.json'
+import { version as workerVersion } from '@mehmetron/demoboard-worker/package.json'
 import { DemoboardWorkerURLs } from './worker/getWorkerByFetch'
 
 const isProduction = (process.env.NODE_ENV as any) === 'production'
@@ -21,18 +21,18 @@ const origin = typeof window !== 'undefined' ? window.location.origin : ''
 export const defaultRuntimeURL =
   process.env.DEMOBOARD_RUNTIME_URL ||
   (isProduction
-    ? `https://unpkg.com/@mehmetrontest/demoboard-runtime@${runtimeVersion}/dist/demoboard-runtime${jsExtension}`
+    ? `https://unpkg.com/@mehmetron/demoboard-runtime@${runtimeVersion}/dist/demoboard-runtime${jsExtension}`
     : !isTest
     ? // Prefer file-loader where possible, so that updates during development
       // cause an automatic refresh of the browser
       origin +
-      require('!file-loader!@mehmetrontest/demoboard-runtime/dist/demoboard-runtime.js')
+      require('!file-loader!@mehmetron/demoboard-runtime/dist/demoboard-runtime.js')
     : `//${hostname}:5000/demoboard-runtime.js?${Date.now()}`)
 
 export const defaultContainerURL =
   process.env.DEMOBOARD_CONTAINER_URL ||
   (isProduction
-    ? `https://unpkg.com/@mehmetrontest/demoboard-runtime@${runtimeVersion}/dist/container.html`
+    ? `https://unpkg.com/@mehmetron/demoboard-runtime@${runtimeVersion}/dist/container.html`
     : // This must be on a different origin for sandboxing purposes
       `//${hostname}:5000/container.html?${Date.now()}`)
 
@@ -40,30 +40,30 @@ export const defaultWorkerURLs: DemoboardWorkerURLs = {
   worker:
     process.env.DEMOBOARD_WORKER_URL ||
     (isProduction
-      ? `https://unpkg.com/@mehmetrontest/demoboard-worker@${workerVersion}/dist/umd/index.js`
+      ? `https://unpkg.com/@mehmetron/demoboard-worker@${workerVersion}/dist/umd/index.js`
       : !isTest
       ? origin +
-        require('!file-loader!@mehmetrontest/demoboard-worker/dist/umd/index.js')
+        require('!file-loader!@mehmetron/demoboard-worker/dist/umd/index.js')
       : 'NOT REQUIRED AS WORKER IS LOADED VIA require()'),
 }
 
 if (isProduction) {
-  defaultWorkerURLs.transformBase = `https://unpkg.com/@mehmetrontest/demoboard-worker@${workerVersion}/dist/umd/transforms/`
+  defaultWorkerURLs.transformBase = `https://unpkg.com/@mehmetron/demoboard-worker@${workerVersion}/dist/umd/transforms/`
 } else if (!isTest && process.env.DEMOBOARD_WORKER_URL !== 'parent') {
   // Not required in tests as worker is not actually inside a worker --
   // and calling require('!file-loader!') will cause an error.
   defaultWorkerURLs.transformOverrides = {
     babel:
       origin +
-      require('!file-loader!@mehmetrontest/demoboard-worker/dist/umd/transforms/babel.js'),
+      require('!file-loader!@mehmetron/demoboard-worker/dist/umd/transforms/babel.js'),
     css:
       origin +
-      require('!file-loader!@mehmetrontest/demoboard-worker/dist/umd/transforms/css.js'),
+      require('!file-loader!@mehmetron/demoboard-worker/dist/umd/transforms/css.js'),
     cssModule:
       origin +
-      require('!file-loader!@mehmetrontest/demoboard-worker/dist/umd/transforms/cssModule.js'),
+      require('!file-loader!@mehmetron/demoboard-worker/dist/umd/transforms/cssModule.js'),
     mdx:
       origin +
-      require('!file-loader!@mehmetrontest/demoboard-worker/dist/umd/transforms/mdx.js'),
+      require('!file-loader!@mehmetron/demoboard-worker/dist/umd/transforms/mdx.js'),
   }
 }

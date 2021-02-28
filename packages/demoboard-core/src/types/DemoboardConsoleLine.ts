@@ -5,7 +5,7 @@
  * in the LICENSE file in the root directory of this source tree.
  */
 
-import { ConsoleItem } from '@mehmetrontest/demoboard-messaging'
+import { ConsoleItem } from '@mehmetron/demoboard-messaging'
 
 export type DemoboardConsoleLine =
   | {

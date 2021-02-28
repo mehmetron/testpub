@@ -8,7 +8,7 @@
 export {
   DemoboardWorkerBuildResult,
   DemoboardWorkerTransformedModule,
-} from '@mehmetrontest/demoboard-worker'
+} from '@mehmetron/demoboard-worker'
 
 export * from './DemoboardBuild'
 export * from './DemoboardConsoleLine'

@@ -6,7 +6,7 @@
  */
 
 import * as Comlink from 'comlink'
-import { DemoboardWorker } from '@mehmetrontest/demoboard-worker'
+import { DemoboardWorker } from '@mehmetron/demoboard-worker'
 
 export interface DemoboardWorkerURLs {
   worker: string

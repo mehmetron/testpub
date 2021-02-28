@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime.js'
 import { Polestar, FetchResult } from 'polestar'
-import { createHost } from '@mehmetrontest/demoboard-messaging'
+import { createHost } from '@mehmetron/demoboard-messaging'
 import { captureAnchorClicks } from './captureAnchorClicks'
 import { captureConsole } from './captureConsole'
 import { captureErrors } from './captureErrors'

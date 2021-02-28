@@ -1,4 +1,4 @@
-import { Host } from '@mehmetrontest/demoboard-messaging'
+import { Host } from '@mehmetron/demoboard-messaging'
 
 export function captureErrors(host: Host) {
   window.addEventListener('unhandledrejection', function(

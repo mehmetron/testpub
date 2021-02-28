@@ -9,7 +9,7 @@ import {
   DemoboardWorkerBuildRule,
   DemoboardWorkerTransformFetchOptions,
   DemoboardWorkerTransformedModule,
-} from '@mehmetrontest/demoboard-worker'
+} from '@mehmetron/demoboard-worker'
 
 export type DemoboardBuildStatus = 'busy' | 'error' | 'success'
 

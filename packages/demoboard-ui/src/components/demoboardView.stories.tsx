@@ -8,7 +8,7 @@
 import {
   useDemoboardInstance,
   useDemoboardProject,
-} from '@mehmetrontest/demoboard-core'
+} from '@mehmetron/demoboard-core'
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { DemoboardView, DemoboardViewGlobalStyles } from './DemoboardView'

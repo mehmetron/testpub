@@ -5,7 +5,7 @@
  * in the LICENSE file in the root directory of this source tree.
  */
 
-import { DemoboardWorker } from '@mehmetrontest/demoboard-worker'
+import { DemoboardWorker } from '@mehmetron/demoboard-worker'
 import getWorkerByFetch, { DemoboardWorkerURLs } from './getWorkerByFetch'
 
 function getWorker(urls: DemoboardWorkerURLs): DemoboardWorker {

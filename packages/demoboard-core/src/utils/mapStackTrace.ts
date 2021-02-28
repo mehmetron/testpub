@@ -116,7 +116,7 @@ export async function mapStackTrace(
 
       // The URI for demoboard runtime code is set to this, so we can safely
       // skip it.
-      if (uri === 'mehmetrontest.com') {
+      if (uri === 'mehmetron.com') {
         continue
       }
 

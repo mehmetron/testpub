@@ -1,5 +1,5 @@
 {
-  "name": "@mehmetrontest/demoboard-worker-provider",
+  "name": "@mehmetron/demoboard-worker-provider",
   "version": "0.1.34",
   "description": "Embeddable code editor",
   "author": "James K Nelson <james@jamesknelson.com>",
@@ -17,8 +17,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@mehmetrontest/demoboard-core": "^0.1.34",
-    "@mehmetrontest/demoboard-worker": "^0.1.34",
+    "@mehmetron/demoboard-core": "^0.1.34",
+    "@mehmetron/demoboard-worker": "^0.1.34",
     "comlink": "^4.0.5",
     "tslib": "1.10.0",
     "worker-loader": "^2.0.0"
@@ -40,5 +40,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "aea607fed4a91f4c68307b11539a3626a3d50e53"
+  "gitHead": "5527e8f31eea5048af2ade796dd625122190a2c0"
 }

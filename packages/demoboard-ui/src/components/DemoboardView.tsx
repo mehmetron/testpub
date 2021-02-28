@@ -13,7 +13,7 @@ import {
   DemoboardLayout,
   DemoboardProject,
   normalizeReferencedPathname,
-} from '@mehmetrontest/demoboard-core'
+} from '@mehmetron/demoboard-core'
 
 import { BuildError } from './buildError'
 import { CodeMirrorEditorGlobalStyles } from './CodeMirrorEditorStyles'

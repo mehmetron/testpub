@@ -1,4 +1,4 @@
-import { Host } from '@mehmetrontest/demoboard-messaging'
+import { Host } from '@mehmetron/demoboard-messaging'
 
 /**
  * Capture clicks on anchors and send "navigate"

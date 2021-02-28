@@ -13,7 +13,7 @@ import {
   ConsoleItem,
   MessagesToHost,
   Runtime as DemoboardRuntime,
-} from '@mehmetrontest/demoboard-messaging'
+} from '@mehmetron/demoboard-messaging'
 import {
   DemoboardBuild,
   DemoboardConsoleLine,

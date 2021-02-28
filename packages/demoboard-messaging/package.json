@@ -1,5 +1,5 @@
 {
-  "name": "@mehmetrontest/demoboard-messaging",
+  "name": "@mehmetron/demoboard-messaging",
   "version": "0.1.34",
   "description": "Communication between demoboard runtime and host",
   "author": "James K Nelson <james@jamesknelson.com>",
@@ -23,5 +23,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "aea607fed4a91f4c68307b11539a3626a3d50e53"
+  "gitHead": "5527e8f31eea5048af2ade796dd625122190a2c0"
 }

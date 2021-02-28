@@ -1,3 +1,3 @@
-export * from '@mehmetrontest/demoboard-core'
-export * from '@mehmetrontest/demoboard-ui'
+export * from '@mehmetron/demoboard-core'
+export * from '@mehmetron/demoboard-ui'
 export * from './Demoboard'

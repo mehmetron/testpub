@@ -2,7 +2,7 @@ import {
   Host,
   ConsoleMethod,
   ConsoleItemPayloads,
-} from '@mehmetrontest/demoboard-messaging'
+} from '@mehmetron/demoboard-messaging'
 
 export const forwardedMethods: (keyof Console)[] = [
   'assert',

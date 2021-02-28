@@ -12,7 +12,7 @@ import {
   DemoboardInstanceIFrameProps,
   DemoboardBuild,
   DemoboardInstance,
-} from '@mehmetrontest/demoboard-core'
+} from '@mehmetron/demoboard-core'
 
 import { colors, dimensions } from '../constants'
 
