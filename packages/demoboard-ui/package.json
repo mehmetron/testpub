@@ -38,7 +38,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "6d0a81ca3f4e684b4a7568f0d57ba4c4ccfbb622",
+  "gitHead": "aea607fed4a91f4c68307b11539a3626a3d50e53",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-export-default-from": "^7.5.2",
