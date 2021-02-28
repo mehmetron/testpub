@@ -1,0 +1,33 @@
+{
+  "name": "examples",
+  "version": "0.1.29",
+  "private": true,
+  "dependencies": {
+    "@frontarm/demoboard-core": "^0.1.29",
+    "@types/finalhandler": "^1.1.0",
+    "@types/serve-static": "^1.13.3",
+    "finalhandler": "^1.1.2",
+    "serve-static": "^1.14.1",
+    "universal-react-scripts": "3.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

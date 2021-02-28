@@ -1,0 +1,29 @@
+{
+  "name": "@frontarm/demoboard",
+  "version": "0.1.29",
+  "description": "Embeddable code editor",
+  "author": "James K Nelson <james@jamesknelson.com>",
+  "license": "Apache-2.0",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "cross-env NODE_ENV=development rollup -c",
+    "build:production": "cross-env NODE_ENV=production rollup -c",
+    "build:watch": "yarn run build --watch",
+    "lint": "eslint --ext js,ts,tsx src",
+    "prepare": "yarn run clean && yarn run build:production",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@frontarm/demoboard-core": "^0.1.29",
+    "@frontarm/demoboard-ui": "^0.1.29",
+    "tslib": "1.10.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c95bc9be5e02686208977653cabb28e7d7b1bd75"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "@frontarm/demoboard-worker",
+  "version": "0.1.26",
+  "description": "Embeddable code editor",
+  "author": "James K Nelson <james@jamesknelson.com>",
+  "license": "Apache-2.0",
+  "main": "dist/umd/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist/**",
+    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" NODE_ENV=development rollup -c",
+    "build:production": "cross-env NODE_ENV=production rollup -c",
+    "build:watch": "yarn run build --watch",
+    "build:watch:no-umd": "cross-env UMD=exclude yarn run build --watch",
+    "build:watch:umd-only": "cross-env UMD=only yarn run build --watch",
+    "lint": "eslint --ext js,ts,tsx src",
+    "prepare": "yarn run clean && yarn run build:production",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@babel/standalone": "^7.4.5",
+    "@frontarm/demoboard-messaging": "^0.1.20",
+    "babel-plugin-dynamic-import-node": "2.2.0",
+    "babel-plugin-styled-components": "1.10.0",
+    "comlink": "^4.0.5",
+    "hast-util-to-html": "^5.0.0",
+    "hast-util-to-string": "^1.0.1",
+    "lru-cache": "^5.1.1",
+    "postcss": "^7.0.7",
+    "postcss-modules": "^1.4.1",
+    "prettier": "^1.16.4",
+    "refractor": "^2.6.2",
+    "remark-emoji": "^2.0.2",
+    "remark-images": "^0.16.0",
+    "remark-slug": "^5.1.0",
+    "remark-textr": "^3.0.2",
+    "sass.js": "^0.10.12",
+    "semver": "^6.3.0",
+    "typographic-base": "^1.0.4",
+    "unist-util-visit": "^1.4.0"
+  },
+  "peerDependencies": {
+    "@mdx-js/mdx": "^1.4.5",
+    "@types/exenv": "^1.2.0",
+    "@types/jszip": "^3.1.6",
+    "@types/lru-cache": "^5.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c95bc9be5e02686208977653cabb28e7d7b1bd75"
+}

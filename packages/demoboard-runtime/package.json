@@ -1,0 +1,28 @@
+{
+  "name": "@frontarm/demoboard-runtime",
+  "version": "0.1.29",
+  "description": "Embeddable code editor runtime",
+  "author": "James K Nelson <james@jamesknelson.com>",
+  "license": "Apache-2.0",
+  "main": "dist/demoboard-runtime.js",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "cross-env NODE_ENV=development rollup -c -o dist/demoboard-runtime.js",
+    "build:production": "cross-env NODE_ENV=production rollup -c -o dist/demoboard-runtime.min.js",
+    "build:watch": "yarn run build --watch",
+    "prepare": "yarn run clean && yarn run build && yarn run build:production && cp src/container.html dist/container.html"
+  },
+  "dependencies": {
+    "@frontarm/demoboard-messaging": "^0.1.20",
+    "polestar": "^0.1.2",
+    "regenerator-runtime": "^0.12.1",
+    "replicator": "^1.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c95bc9be5e02686208977653cabb28e7d7b1bd75"
+}

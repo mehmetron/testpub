@@ -1,0 +1,55 @@
+{
+  "name": "@frontarm/demoboard-core",
+  "version": "0.1.29",
+  "description": "Embeddable code editor",
+  "author": "James K Nelson <james@jamesknelson.com>",
+  "license": "Apache-2.0",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist/**",
+    "build": "cross-env NODE_ENV=development rollup -c",
+    "build:production": "cross-env NODE_ENV=production rollup -c",
+    "build:watch": "yarn run build --watch",
+    "lint": "eslint --ext js,ts,tsx src",
+    "prepare": "yarn run clean && yarn run build:production",
+    "test": "env-cmd -f .env.test jest",
+    "test:watch": "yarn test --watch"
+  },
+  "dependencies": {
+    "@frontarm/demoboard-messaging": "^0.1.20",
+    "@frontarm/demoboard-runtime": "^0.1.29",
+    "@frontarm/demoboard-worker": "^0.1.26",
+    "automerge": "^0.12.1",
+    "comlink": "^4.0.5",
+    "exenv": "^1.2.2",
+    "file-saver": "^2.0.0",
+    "jszip": "^3.1.5",
+    "react-hot-keys": "^1.2.2",
+    "react-visibility-sensor": "^4.1.2",
+    "resize-observer-polyfill": "^1.5.0",
+    "source-map": "^0.7.3",
+    "tslib": "1.10.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.3",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/react-hooks": "^3.2.1",
+    "env-cmd": "^10.0.1",
+    "file-loader": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@types/codemirror": "^0.0.77",
+    "@types/exenv": "^1.2.0",
+    "@types/jszip": "^3.1.6",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c95bc9be5e02686208977653cabb28e7d7b1bd75"
+}

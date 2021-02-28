@@ -1,0 +1,44 @@
+{
+  "name": "@frontarm/demoboard-worker-provider",
+  "version": "0.1.29",
+  "description": "Embeddable code editor",
+  "author": "James K Nelson <james@jamesknelson.com>",
+  "license": "Apache-2.0",
+  "module": "dist/es/DemoboardWorkerProvider.js",
+  "types": "dist/types/DemoboardWorkerProvider.d.ts",
+  "scripts": {
+    "clean": "rimraf dist/**",
+    "build": "cross-env NODE_ENV=development rollup -c",
+    "build:production": "cross-env NODE_ENV=production rollup -c",
+    "build:watch": "yarn run build --watch",
+    "lint": "eslint --ext js,ts,tsx src",
+    "prepare": "yarn run clean && yarn run build:production",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@frontarm/demoboard-core": "^0.1.29",
+    "@frontarm/demoboard-worker": "^0.1.26",
+    "comlink": "^4.0.5",
+    "tslib": "1.10.0",
+    "worker-loader": "^2.0.0"
+  },
+  "devDependencies": {
+    "file-loader": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@mdx-js/mdx": "^1.4.5",
+    "@types/codemirror": "^0.0.77",
+    "@types/exenv": "^1.2.0",
+    "@types/jszip": "^3.1.6",
+    "@types/lru-cache": "^5.1.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "c95bc9be5e02686208977653cabb28e7d7b1bd75"
+}
