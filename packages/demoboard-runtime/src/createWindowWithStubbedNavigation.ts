@@ -155,7 +155,10 @@ export function createWindowWithStubbedNavigation(
       }
 
       var result = target[name]
-      if (!['Promise', 'Symbol'].includes(name) && typeof result === 'function') {
+      if (
+        !['Promise', 'Symbol'].includes(String(name)) &&
+        typeof result === 'function'
+      ) {
         var cached = windowBoundFunctions[name]
         if (cached) {
           return cached
