@@ -126,8 +126,9 @@ const App = () => {
       <Demoboard
         config={{
           initialSources: {
-            '/README.mdx': demoboardExample,
+            '/index.js': "const element = document.createElement('h1')\nelement.innerHTML = `\n  Hello, world!<br />\n`.repeat(10)\ndocument.getElementById('root').appendChild(element)",
           },
+          initialGeneratedTabs: ['/index.html'],
         }}
         css={css`
           position: absolute;

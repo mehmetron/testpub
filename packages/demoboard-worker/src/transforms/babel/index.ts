@@ -44,6 +44,7 @@ register(
           sourceType: 'module',
         })
 
+        // console.log("babel transformed ", babelOutput.code)
         return {
           css: null,
           dependencies: babelOutput.metadata.requires || [],

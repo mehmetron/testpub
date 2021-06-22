@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/demoboard-messaging/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/demoboard-worker/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/demoboard/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/demoboard-core/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/demoboard-worker-provider/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/demoboard-ui/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/demoboard-runtime/dist" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

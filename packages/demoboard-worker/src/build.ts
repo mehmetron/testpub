@@ -173,6 +173,7 @@ export class DemoboardBuilder {
     rules: DemoboardWorkerBuildRule[],
     transformLoadingStrategy?: DemoboardWorkerTransformFetchOptions,
   ): Promise<DemoboardWorkerTransformedModule> {
+    // console.log("this is the original source ", originalSource)
     let transformedSource: DemoboardWorkerTransformedModule = {
       css: null,
       map: null,
@@ -196,6 +197,7 @@ export class DemoboardBuilder {
       transformedSource = await (await transformerPromise)(transformedSource)
     }
 
+    // console.log("transformed source ", transformedSource)
     return transformedSource
   }
 }

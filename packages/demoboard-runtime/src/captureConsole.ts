@@ -23,6 +23,7 @@ export function captureConsole(targetConsole: Console, host: Host) {
   let forwardedConsole = new ForwardedConsole({
     host,
   })
+  // console.log("26 forwardedConsole", forwardedConsole)
 
   for (let i = 0; i < forwardedMethods.length; i++) {
     let method = forwardedMethods[i]

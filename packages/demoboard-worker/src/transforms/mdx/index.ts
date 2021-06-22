@@ -58,6 +58,7 @@ register(
           sourceType: 'module',
         })
 
+        // console.log("mdx babel transformed ", babelOutput.code)
         return {
           css: null,
           transformedSource: babelOutput.code,

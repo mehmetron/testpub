@@ -1,6 +1,9 @@
 Demoboard
 =========
 
+If 404 localhost:5000/container.html then '''yarn prepare''' in demoboard-runtime
+
+
 An embeddable live editor, with every package on npm.
 
 

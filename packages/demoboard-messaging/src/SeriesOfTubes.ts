@@ -67,6 +67,7 @@ export class SeriesOfTubes<
       }[keyof In],
     ) => void,
   ) {
+    // console.log("70 seriesOfTubes subscribe ", listener)
     this.wildcardSubscriptions.push(listener)
     return () => {
       let index = this.wildcardSubscriptions.indexOf(listener)
@@ -80,6 +81,7 @@ export class SeriesOfTubes<
     type: InType,
     listener: (data: In[InType]) => void,
   ) {
+    // console.log("84 seriesOfTubes subscribeTo ", type, listener)
     let typeSubscriptions = this.typeSubscriptions[type as string]
     if (!typeSubscriptions) {
       typeSubscriptions = this.typeSubscriptions[type as string] = []
@@ -94,6 +96,7 @@ export class SeriesOfTubes<
   }
 
   dispatch<OutType extends keyof Out>(type: OutType, payload: Out[OutType]) {
+    // console.log("99 seriesOfTubes dispatch ", type, payload)
     let encode = this.options.encode[type]
     let encodedPayload = encode ? encode(payload, this) : payload
 
@@ -115,6 +118,7 @@ export class SeriesOfTubes<
   }
 
   private handleMessage = (e: MessageEvent) => {
+    // console.log("121 seriesOfTubes handleMessage", e)
     let { id, inNamespace } = this.options
     let data = e.data
     if (

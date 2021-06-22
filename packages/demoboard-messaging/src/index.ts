@@ -28,6 +28,7 @@ export function createHost(id: string, version: number) {
         version,
       }),
       unwrap: message => {
+        // console.log("31 message ", message)
         if (message.type === RuntimeNamespace + 'worker' && message.id === id) {
           return message.payload
         }
@@ -81,6 +82,7 @@ function createEndpoint({
 
   return {
     addEventListener: (type, listener, options) => {
+      // console.log("85 createEndpoint addEventListener ", type, listener, options)
       const wrappedListener = (event: MessageEvent) => {
         const unwrappedMessage = event && event.data && unwrap(event.data)
         if (unwrappedMessage) {
@@ -91,12 +93,14 @@ function createEndpoint({
       window.addEventListener(type, wrappedListener, options)
     },
     removeEventListener: (type, listener, options) => {
+      // console.log("96 createEndpoint removeEventListener ", type, listener, options)
       const wrappedListener = listeners.get(listener)
       if (wrappedListener) {
         window.removeEventListener(type, wrappedListener, options)
       }
     },
     postMessage: (message, transferables) => {
+      // console.log("103 createEndpoint postMessage ", message, transferables)
       destination.postMessage(wrap(message), '*', transferables)
     },
   }
@@ -151,6 +155,7 @@ export function createRuntime(
     }),
     {
       setSource: srcdoc => {
+        // console.log("158 createRuntime setSource ", srcdoc)
         destination.postMessage(
           {
             type: ContainerNamespace + 'set-srcdoc',
@@ -161,6 +166,7 @@ export function createRuntime(
         )
       },
       init: () => {
+        // console.log("169 createRuntime init ")
         destination.postMessage(
           {
             type: ContainerNamespace + 'init',

@@ -239,6 +239,7 @@ export function useDemoboardInstance(
 
         let { build, history, onChangeHistory } = mutableState.latest
 
+        // console.log("242 mutableState ", mutableState)
         switch (message.type) {
           // Note: this won't always be called immediately, as the demoboard
           // usually won't be built until the iframe enters the viewport for the
@@ -286,6 +287,7 @@ export function useDemoboardInstance(
                 transformedModules: transformedModules || {},
               })
               .then(payload => {
+                // console.log("290 fetchDependency result: ", payload)
                 let runtime = mutableState.runtime
                 if (
                   !runtime ||
@@ -352,6 +354,7 @@ export function useDemoboardInstance(
           element,
           worker,
         )
+        // console.log("357 mutableState.runtime ", mutableState.runtime)
 
         mutableState.runtime.subscribe(handleMessage)
       }
@@ -365,6 +368,8 @@ export function useDemoboardInstance(
     [containerURL, id, mutableState, worker],
   )
 
+  // console.log("370 iframeRef ", iframeRef)
+  // console.log("371 state.consoleLines ", state.consoleLines)
   return {
     consoleLines: state.consoleLines,
     error: mutableState.status === 'error' ? state.error : undefined,
@@ -391,6 +396,7 @@ function demoboardInstanceReducer(
   state: UseDemoboardInstanceState,
   action: DemoboardInstanceAction,
 ): UseDemoboardInstanceState {
+  // console.log("398 demoboardInstanceReducer state: ", state, "action: ", action)
   switch (action.type) {
     case 'error-loading-module':
       return {
@@ -487,6 +493,8 @@ function updateContainer(state: UseDemoboardInstanceMutableState) {
       '<!--DEMOBOARD_SETTINGS-->',
       `<script>window.demoboardRuntime = window.setupDemoboardRuntime(${stringifiedId}, ${stringifiedInitialLocation}, ${state.latestContainerVersion}, ${stringifiedEnv})</script>`,
     )
+
+  // console.log("496 html ", html)
 
   // This needs to be posted via a message instead of set as a prop
   // on the iframe, as it isn't actually being set on the iframe we

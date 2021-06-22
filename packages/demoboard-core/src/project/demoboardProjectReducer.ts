@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
  * Copyright 2019 Seven Stripes Kabushiki Kaisha
  *
@@ -48,42 +49,93 @@ function updateData(
 }
 
 function closeTab(state: DemoboardProjectState, pathname: string) {
-  return updateView(state, view => {
-    let selectedPathnameIndex = state.view.selectedTab
-      ? view.tabs.indexOf(state.view.selectedTab)
-      : -1
 
-    view.tabs.splice(selectedPathnameIndex, selectedPathnameIndex)
+  let selectedPathnameIndex = state.view.selectedTab
+    ? state.view.tabs.indexOf(state.view.selectedTab)
+    : -1
 
-    // If we just removed the selected tab, then let's try and select
-    // another tab
-    if (pathname && view.tabs.indexOf(pathname) === -1) {
-      let newSelectedTabIndex = Math.min(
-        selectedPathnameIndex,
-        view.tabs.length - 1,
-      )
-      view.selectedTab =
-        newSelectedTabIndex === -1 ? null : view.tabs[newSelectedTabIndex]
+  let tabs = state.view.tabs
+
+  tabs = tabs.splice(selectedPathnameIndex, selectedPathnameIndex)
+
+  var selectedTab: string;
+
+
+    let newSelectedTabIndex = Math.min(
+      selectedPathnameIndex,
+      tabs.length - 1,
+    )
+    selectedTab =
+      newSelectedTabIndex === -1 ? null : tabs[newSelectedTabIndex]
+
+
+  console.log("72 selectedTab ", selectedTab)
+
+  return {
+    ...state,
+    view: {
+      ...state.view,
+      tabs: tabs,
+      selectedTab: selectedTab
     }
-  })
+  }
+
+
+  // console.log("51 closeTab state", state)
+  // console.log("52 closeTab pathname", pathname)
+  // return updateView(state, view => {
+  //   let selectedPathnameIndex = state.view.selectedTab
+  //     ? view.tabs.indexOf(state.view.selectedTab)
+  //     : -1
+  //
+  //   view.tabs.splice(selectedPathnameIndex, selectedPathnameIndex)
+  //
+  //   // If we just removed the selected tab, then let's try and select
+  //   // another tab
+  //   if (pathname && view.tabs.indexOf(pathname) === -1) {
+  //     let newSelectedTabIndex = Math.min(
+  //       selectedPathnameIndex,
+  //       view.tabs.length - 1,
+  //     )
+  //     view.selectedTab =
+  //       newSelectedTabIndex === -1 ? null : view.tabs[newSelectedTabIndex]
+  //   }
+  // })
 }
 
 function openTab(state: DemoboardProjectState, pathname: string) {
-  return updateView(state, view => {
-    if (view.tabs.indexOf(pathname) === -1) {
-      let selectedPathnameIndex = state.view.selectedTab
-        ? view.tabs.indexOf(state.view.selectedTab)
-        : -1
-      view.tabs.splice(selectedPathnameIndex + 1, 0, pathname)
+
+  return {
+    ...state,
+    view: {
+      ...state.view,
+      tabs: [...state.view.tabs, pathname],
+      selectedTab:  pathname
     }
-    view.selectedTab = pathname
-  })
+  }
+
+  // return updateView(state, view => {
+  //   if (view.tabs.indexOf(pathname) === -1) {
+  //     let selectedPathnameIndex = state.view.selectedTab
+  //       ? view.tabs.indexOf(state.view.selectedTab)
+  //       : -1
+  //     view.tabs.splice(selectedPathnameIndex + 1, 0, pathname)
+  //   }
+  //   view.selectedTab = pathname
+  // })
 }
 
 function selectTab(state: DemoboardProjectState, pathname: string | null) {
-  return updateView(state, view => {
-    view.selectedTab = pathname
-  })
+  return {
+    ...state,
+    view: {
+      ...state.view,
+      selectedTab: pathname,
+    }
+  }
+  // return updateView(state, view => {
+  //   view.selectedTab = pathname
+  // })
 }
 
 function setTabs(
@@ -123,7 +175,9 @@ function changeSource(
   codeMirrorDoc: CodeMirrorDoc,
   codeMirrorChanges: CodeMirrorChange[] = [],
 ) {
+  console.log("128 ", state.data.sources[pathname])
   let source = state.data.sources[pathname]
+  console.log("130 ", state.data.sources[pathname])
 
   if (!(source instanceof Text)) {
     if (codeMirrorDoc && source) {
@@ -152,7 +206,10 @@ function changeSource(
 
   return {
     ...updateData(state, data => {
+      console.log("159 pathname", pathname)
+      console.log("159 ", data.sources[pathname])
       const text = data.sources[pathname] as Text
+      console.log("161 ", data.sources[pathname], ":more: ", text)
 
       for (let change of codeMirrorChanges) {
         const startPos = codeMirrorDoc.indexFromPos(change.from)
@@ -182,14 +239,47 @@ function changeSource(
 }
 
 function deleteSource(state: DemoboardProjectState, pathname: string) {
+  // pathname = "/styles.css"
+  console.log("185 state", state)
+  console.log("186 pathname", pathname)
   let unpersistedCodeMirrorDocs = state.unpersistedCodeMirrorDocs
+  console.log("188 unpersistedCodeMirrorDocs", unpersistedCodeMirrorDocs)
   if (pathname in unpersistedCodeMirrorDocs) {
-    unpersistedCodeMirrorDocs = { ...unpersistedCodeMirrorDocs }
+    // unpersistedCodeMirrorDocs = { ...unpersistedCodeMirrorDocs }
     delete unpersistedCodeMirrorDocs[pathname]
   }
+  console.log("201 unpersistedCodeMirrorDocs", unpersistedCodeMirrorDocs)
+  console.log("202 state.unpersistedCodeMirrorDocs", state.unpersistedCodeMirrorDocs)
   return {
     ...updateData(state, data => {
-      delete data.sources[pathname]
+
+      console.log("206 state ", state)
+
+      let sources = state.data.sources
+      console.log("207 sources", sources)
+
+      if (pathname in sources) {
+        console.log("212 sources", sources)
+        let mySource = sources[pathname]
+        console.log("213 sources", mySource)
+        // @ts-ignore
+        // sources[pathname] = ""
+        console.log("216 sources", sources[pathname])
+        // @ts-ignore
+        delete sources[pathname]
+      }
+
+
+      console.log("197 all ", data)
+      console.log("198 state ", state)
+      console.log("199 deleteSource ", data.sources)
+      console.log("200 deleteSource ", data.sources[pathname])
+      // delete data.sources[pathname]
+      console.log("209 deleteSource ", data.sources[pathname])
+      console.log("210 state ", state)
+
+      console.log("212 ", state.unpersistedCodeMirrorDocs)
+      console.log("213 ", unpersistedCodeMirrorDocs)
     }),
     unpersistedCodeMirrorDocs,
   }
@@ -223,17 +313,23 @@ function replaceSources(
         }
 
         if (!merge) {
+          console.log("235 ", data.sources)
           data.sources = {}
+          console.log("237 ", data.sources)
         }
 
         if (typeof source !== 'string') {
+          console.log("241 ", data.sources[pathname])
           data.sources[pathname] = source
+          console.log("243 ", data.sources[pathname])
         } else {
           let text = new Text()
           if (source.length) {
             text.insertAt!(0, ...source)
           }
+          console.log("249 ", data.sources[pathname])
           data.sources[pathname] = text
+          console.log("251 ", data.sources[pathname])
         }
       }
     }),

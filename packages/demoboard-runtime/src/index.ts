@@ -13,6 +13,7 @@ export default function setupDemoboardRuntime(
   env: object = {},
 ) {
   let host = createHost(id, version)
+  // console.log("16 host ", host)
 
   captureAnchorClicks(host)
   captureConsole(window.console, host)
@@ -46,6 +47,7 @@ export default function setupDemoboardRuntime(
   let loadError = null
 
   host.subscribeTo('module', payload => {
+    // console.log("49 module ", payload)
     let url = payload.url
     if (loadingModules[url]) {
       loadingModules[url][0](payload)
@@ -53,6 +55,7 @@ export default function setupDemoboardRuntime(
     }
   })
   host.subscribeTo('module-failure', payload => {
+    // console.log("57 module-failure ", payload)
     let url = payload.url
     if (loadingModules[url]) {
       loadError = payload.error
@@ -66,6 +69,7 @@ export default function setupDemoboardRuntime(
     moduleThis: windowWithStubbedNavigation,
     fetcher: (url: string, meta) =>
       new Promise<FetchResult>((resolve, reject) => {
+        // console.log("71 meta ", url, meta)
         host.dispatch('module-required', {
           url: url,
           requiredById: meta.requiredById,
@@ -74,9 +78,11 @@ export default function setupDemoboardRuntime(
         loadingModules[url] = [resolve, reject]
       }),
     onEntry: () => {
+      // console.log("80 init")
       host.dispatch('init', {})
     },
     onError: error => {
+      // console.log("84 error", error)
       if (error !== loadError) {
         window.console['native'].error(error)
         host.dispatch('error', error)

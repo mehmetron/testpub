@@ -44,8 +44,14 @@ export const Demoboard = (props: DemoboardProps = defaultProps) => {
   const defaultId = useId(demoboard.id + '-')
 
   const { id = defaultId, width, height, style, className, ...rest } = props
+  // console.log("rest: ", rest)
+  
   const project = useDemoboardProject(rest)
+  // console.log("project: ", project)
+
   const build = useDemoboardBuild(id, project.buildConfig)
+  // console.log("build: ", build)
+
   const instance = useDemoboardInstance({
     build,
     history: project.state.view.history,
@@ -57,6 +63,7 @@ export const Demoboard = (props: DemoboardProps = defaultProps) => {
       })
     },
   })
+  // console.log("instance: ", instance)
 
   return (
     <DemoboardUI

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="616258ed-485a-4810-804b-849f3520eac7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/examples/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/build/generateDemoboardIFrameHTML.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/build/generateDemoboardIFrameHTML.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/build/useDemoboardBuild.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/build/useDemoboardBuild.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/instance/useDemoboardInstance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/instance/useDemoboardInstance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/project/demoboardProjectReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/project/demoboardProjectReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/project/useDemoboardProject.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/project/useDemoboardProject.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-messaging/src/SeriesOfTubes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-messaging/src/SeriesOfTubes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-messaging/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-messaging/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureAnchorClicks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureAnchorClicks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureConsole.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureConsole.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-runtime/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-runtime/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-ui/src/components/DemoboardView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-ui/src/components/DemoboardView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-ui/src/components/openTabList/openTabList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-ui/src/components/openTabList/openTabList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/build.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/build.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/fetchDependency.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/fetchDependency.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/babel/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/babel/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/mdx/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/mdx/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard/src/Demoboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard/src/Demoboard.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pmTobccsbzsad4Xj3FNToX7B3a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="616258ed-485a-4810-804b-849f3520eac7" name="Default Changelist" comment="" />
+      <created>1615787441496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615787441496</updated>
+      <workItem from="1615787443576" duration="10591000" />
+      <workItem from="1619238288226" duration="17468000" />
+      <workItem from="1619326638793" duration="74700000" />
+      <workItem from="1619621805537" duration="1889000" />
+      <workItem from="1619730584572" duration="1372000" />
+      <workItem from="1619763690348" duration="5133000" />
+      <workItem from="1619778505826" duration="811000" />
+      <workItem from="1619779494846" duration="2083000" />
+      <workItem from="1619782669666" duration="451000" />
+      <workItem from="1619786905673" duration="595000" />
+      <workItem from="1619870879544" duration="701000" />
+      <workItem from="1619944712634" duration="4877000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

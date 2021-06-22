@@ -5,6 +5,7 @@ import { Host } from '@mehmetron/demoboard-messaging'
  */
 export function captureAnchorClicks(host: Host) {
   function bubbleAnchorClick(e) {
+    // console.log("8 bubbleAnchorClick", e)
     if (!e.defaultPrevented) {
       var target = e.target
       while (target && !(target instanceof HTMLAnchorElement)) {
@@ -19,6 +20,7 @@ export function captureAnchorClicks(host: Host) {
   }
 
   function captureWindowClick(e) {
+    // console.log("23 captureWindowClick", e)
     var target = e.target
 
     do {

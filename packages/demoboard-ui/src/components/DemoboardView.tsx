@@ -74,6 +74,8 @@ export function DemoboardView(props: DemoboardViewProps) {
   } = props
 
   const error = (build && build.error) || instance.error
+
+  console.log("78 project", project)
   const {
     dispatch,
     sources,
@@ -94,11 +96,15 @@ export function DemoboardView(props: DemoboardViewProps) {
   }, [dispatch])
 
   const handleCloseTab = useCallback(
-    (pathname: string) => {
+  (pathname: string) => {
+    let result = window.confirm("Are you sure you want to delete this file?");
+    if (result) {
+      console.log("102 confirmed ")
       dispatch({
-        type: 'tabs.close',
+        type: 'sources.delete',
         pathname,
       })
+    }
     },
     [dispatch],
   )

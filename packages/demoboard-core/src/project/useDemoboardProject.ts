@@ -151,7 +151,7 @@ function renderSources(
   } = state
 
   let sources = state.data.sources as {
-    [pathname: string]: string | ReadonlyText | DemoboardGeneratedFile
+    [pathname: string]: string | Text | DemoboardGeneratedFile
   }
 
   if (activeTemplate) {

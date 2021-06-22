@@ -68,6 +68,7 @@ export async function fetchDependency(options: {
   let sourceFile = requiredById
     ? requiredById.replace('vfs://', '')
     : '[anonymous]'
+  // console.log("71 sourceFile ", sourceFile)
 
   if (vfsURLPattern.test(url)) {
     let id = url
@@ -95,6 +96,7 @@ export async function fetchDependency(options: {
       '\n//# sourceMappingURL=' +
       getSourceMapURL(transpiledModule.map)
 
+    // console.log("99 vfs ", id, url, code, transpiledModule.css, transpiledModule.dependencies)
     return {
       id,
       url,
@@ -125,6 +127,7 @@ export async function fetchDependency(options: {
       const urlToFetch = UMD[name](version)
       let id = urlToFetch.replace('https://unpkg.com/', 'npm://')
 
+      // console.log("129 urlToFetch, originalRequest, sourceFile", urlToFetch, originalRequest, sourceFile)
       const res = await fetchSourceFile(urlToFetch, originalRequest, sourceFile)
       const source = await res.text()
 
@@ -136,6 +139,7 @@ export async function fetchDependency(options: {
         id = id.replace(version, unpkgVersion)
       }
 
+      // console.log("141 npm ", id, url, source + '\n//# sourceURL=' + urlToFetch, dependencyVersionRanges)
       return cacheAndReturn({
         url,
         id,
@@ -175,6 +179,7 @@ export async function fetchDependency(options: {
           resolution.version +
           resolution.pathname
 
+        // console.log("181 urlToFetch, originalRequest, sourceFile", urlToFetch, originalRequest, sourceFile)
         let res = await fetchSourceFile(urlToFetch, originalRequest, sourceFile)
         let source = await res.text()
         let dependencies: string[]
@@ -183,10 +188,12 @@ export async function fetchDependency(options: {
           dependencies = []
         } else {
           let output = await findDependenciesAndTransformModules(source)
+          // console.log("190 output ", output)
           source = output.code
           dependencies = Array.from(new Set(output.dependencies))
         }
 
+        // console.log("195 not umd ", id, url, source + '\n//# sourceURL=' + urlToFetch, dependencies, dependencyVersionRanges)
         return cacheAndReturn({
           url,
           id,
@@ -258,6 +265,7 @@ function cacheAndReturn({
 }
 
 function getFromCache(url: string) {
+  // console.log("268 ", url)
   let result = cache.get(url)
   if (result) {
     return Object.assign({ url }, result)

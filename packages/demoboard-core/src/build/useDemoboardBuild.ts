@@ -11,7 +11,8 @@ import { DemoboardBuild, DemoboardBuildConfig } from '../types'
 import shallowCompare from '../utils/shallowCompare'
 import generateDemoboardIFrameHTML from './generateDemoboardIFrameHTML'
 
-const DefaultBaseURL = 'https://demoboard.io'
+// const DefaultBaseURL = 'https://demoboard.io'
+const DefaultBaseURL = 'http://localhost:3000/'
 
 interface UseDemoboardBuildMutableState {
   buildStarted: boolean
@@ -98,6 +99,7 @@ export function useDemoboardBuild(
 
     mutableState.buildStarted = true
 
+    // console.log("config before worker ", config)
     worker
       .build({
         rules: buildRules,
@@ -118,6 +120,8 @@ export function useDemoboardBuild(
                 // This needs to be called in the main thread instead of the
                 // worker due to a dependency on DOM XML parsing stuff, which
                 // isn't available in workers
+                // console.log("result ", result)
+                // console.log("runtimeURL ", runtimeURL)
                 html = generateDemoboardIFrameHTML(
                   config.entryPathname,
                   result.transformedModules,

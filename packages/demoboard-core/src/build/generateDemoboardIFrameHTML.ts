@@ -115,6 +115,7 @@ ${links}
   // Find <script module> tags, and replace them with a script that requires
   // the module with polestar.
   const moduleScriptNodes = doc.querySelectorAll('script[type=module]')
+  // console.log("script[type=module] ", moduleScriptNodes)
   for (let i = moduleScriptNodes.length - 1; i >= 0; i--) {
     let scriptElement = moduleScriptNodes[i] as HTMLScriptElement
     let scriptSource
@@ -153,6 +154,7 @@ ${links}
 
   // Find remaining <script src> tags, and evluate them with polestar.
   const nonModuleScriptNodes = doc.querySelectorAll('script[src]')
+  // console.log("script[src] ", nonModuleScriptNodes)
   for (let i = nonModuleScriptNodes.length - 1; i >= 0; i--) {
     let scriptElement = nonModuleScriptNodes[i] as HTMLScriptElement
     if (scriptElement.src.indexOf(baseURL) === 0) {
@@ -200,6 +202,7 @@ ${links}
   // Find <link rel="stylesheet"> tags, and replace their href URL with an
   // object URL.
   const linkStyleNodes = doc.querySelectorAll('link[rel="stylesheet"]')
+  // console.log("link[rel=\"stylesheet\"] ", linkStyleNodes)
   for (let i = linkStyleNodes.length - 1; i >= 0; i--) {
     let linkElement = linkStyleNodes[i] as HTMLLinkElement
     if (linkElement.href && linkElement.href.indexOf(baseURL) === 0) {
@@ -231,5 +234,6 @@ ${links}
 
   head.removeChild(base)
 
+  // console.log("doc.documentElement.innerHTML ", doc.documentElement.innerHTML)
   return doc.documentElement.innerHTML
 }
