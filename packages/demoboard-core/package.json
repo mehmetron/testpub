@@ -25,6 +25,7 @@
     "comlink": "^4.0.5",
     "exenv": "^1.2.2",
     "file-saver": "^2.0.0",
+    "immer": "^9.0.5",
     "jszip": "^3.1.5",
     "react-hot-keys": "^1.2.2",
     "react-visibility-sensor": "^4.1.2",

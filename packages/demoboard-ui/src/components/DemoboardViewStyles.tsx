@@ -162,6 +162,8 @@ export const StyledProjectHeader = (
 ) => <StyledHeader {...props} color={colors.lightGrey} />
 
 export function WrappedEditor({ config, ...rest }: CodeMirrorEditorProps) {
+  // console.log("165 wrappededitor ", config)
+  // console.log("166 wrappededitor ", rest)
   return (
     <div
       css={css`

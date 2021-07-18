@@ -2,25 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="616258ed-485a-4810-804b-849f3520eac7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/examples/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/build/generateDemoboardIFrameHTML.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/build/generateDemoboardIFrameHTML.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/build/useDemoboardBuild.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/build/useDemoboardBuild.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/instance/useDemoboardInstance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/instance/useDemoboardInstance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/project/demoboardProjectReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/project/demoboardProjectReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/project/useDemoboardProject.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/project/useDemoboardProject.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-messaging/src/SeriesOfTubes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-messaging/src/SeriesOfTubes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-messaging/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-messaging/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureAnchorClicks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureAnchorClicks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureConsole.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-runtime/src/captureConsole.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-runtime/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-runtime/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-core/src/types/DemoboardProject.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-core/src/types/DemoboardProject.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demoboard-ui/src/components/DemoboardView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-ui/src/components/DemoboardView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/demoboard-ui/src/components/DemoboardViewStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-ui/src/components/DemoboardViewStyles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demoboard-ui/src/components/openTabList/openTabList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-ui/src/components/openTabList/openTabList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/build.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/build.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/fetchDependency.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/fetchDependency.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/babel/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/babel/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/mdx/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard-worker/src/transforms/mdx/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/demoboard/src/Demoboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/demoboard/src/Demoboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +59,10 @@
       <workItem from="1619786905673" duration="595000" />
       <workItem from="1619870879544" duration="701000" />
       <workItem from="1619944712634" duration="4877000" />
+      <workItem from="1626181753024" duration="16317000" />
+      <workItem from="1626256876087" duration="2223000" />
+      <workItem from="1626533063424" duration="837000" />
+      <workItem from="1626546932943" duration="131000" />
     </task>
     <servers />
   </component>

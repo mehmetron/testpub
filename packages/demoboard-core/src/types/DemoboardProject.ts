@@ -238,6 +238,7 @@ export type DemoboardProjectSourcesAction =
       // file static without actually changing anything, you can supply an empty
       // change array.
       type: 'sources.change'
+      value: string
       pathname: string
       codeMirrorChanges: CodeMirrorChange[]
       codeMirrorDoc: CodeMirrorDoc

@@ -171,15 +171,22 @@ function setTabs(
 
 function changeSource(
   state: DemoboardProjectState,
+  value: string,
   pathname: string,
   codeMirrorDoc: CodeMirrorDoc,
   codeMirrorChanges: CodeMirrorChange[] = [],
 ) {
+  console.log("178 changeSource ", state)
+  console.log("179 changeSource ", value)
+  console.log("179 changeSource ", pathname)
+  console.log("180 changeSource ", codeMirrorDoc)
+  console.log("181 changeSource ", codeMirrorChanges)
+
   console.log("128 ", state.data.sources[pathname])
   let source = state.data.sources[pathname]
   console.log("130 ", state.data.sources[pathname])
 
-  if (!(source instanceof Text)) {
+  // if (!(source instanceof Text)) {
     if (codeMirrorDoc && source) {
       return replaceSources(
         state,
@@ -198,39 +205,58 @@ function changeSource(
         'Invariant violation: cannot change a generated source without passing in a codeMirrorDoc and a generator',
       )
     }
-  }
+  // }
 
-  if (codeMirrorChanges.length === 0) {
-    return state
-  }
+  // if (codeMirrorChanges.length === 0) {
+  //   return state
+  // }
+  //
+  // return {
+  //   ...updateData(state, data => {
+  //     console.log("159 pathname", pathname)
+  //     console.log("159 ", data.sources[pathname])
+  //     const text = data.sources[pathname] as Text
+  //     console.log("161 ", data.sources[pathname], ":more: ", text)
+  //
+  //     console.log("214 codeMirrorChanges ", codeMirrorChanges)
+  //
+  //     for (let change of codeMirrorChanges) {
+  //       const startPos = codeMirrorDoc.indexFromPos(change.from)
+  //       const removedLines = change.removed || ['']
+  //       const addedLines = change.text
+  //       const removedLength =
+  //         removedLines.reduce(
+  //           (sum, remove) => sum + Array.from(remove).length + 1,
+  //           0,
+  //         ) - 1
+  //
+  //       if (removedLength > 0) {
+  //         text.deleteAt!(startPos, removedLength)
+  //       }
+  //
+  //       const addedText = addedLines.join('\n')
+  //       if (addedText.length > 0) {
+  //         text.insertAt!(startPos, ...Array.from(addedText))
+  //       }
+  //     }
+  //   }),
+  //   unpersistedCodeMirrorDocs: {
+  //     ...state.unpersistedCodeMirrorDocs,
+  //     [pathname]: codeMirrorDoc,
+  //   },
+  // }
+
+
+  console.log("250 reached changeSource end ")
 
   return {
-    ...updateData(state, data => {
-      console.log("159 pathname", pathname)
-      console.log("159 ", data.sources[pathname])
-      const text = data.sources[pathname] as Text
-      console.log("161 ", data.sources[pathname], ":more: ", text)
-
-      for (let change of codeMirrorChanges) {
-        const startPos = codeMirrorDoc.indexFromPos(change.from)
-        const removedLines = change.removed || ['']
-        const addedLines = change.text
-        const removedLength =
-          removedLines.reduce(
-            (sum, remove) => sum + Array.from(remove).length + 1,
-            0,
-          ) - 1
-
-        if (removedLength > 0) {
-          text.deleteAt!(startPos, removedLength)
-        }
-
-        const addedText = addedLines.join('\n')
-        if (addedText.length > 0) {
-          text.insertAt!(startPos, ...Array.from(addedText))
-        }
+    ...state,
+    data: {
+      ...state.data,
+      sources: {
+        [pathname]: codeMirrorDoc.getValue().toString(),
       }
-    }),
+    },
     unpersistedCodeMirrorDocs: {
       ...state.unpersistedCodeMirrorDocs,
       [pathname]: codeMirrorDoc,
@@ -269,17 +295,20 @@ function deleteSource(state: DemoboardProjectState, pathname: string) {
         delete sources[pathname]
       }
 
+      // console.log("274 ", state.view.selectedTab)
+      // selectTab(state, "/index.js")
+      // console.log("275 ", state.view.selectedTab)
 
-      console.log("197 all ", data)
-      console.log("198 state ", state)
-      console.log("199 deleteSource ", data.sources)
-      console.log("200 deleteSource ", data.sources[pathname])
-      // delete data.sources[pathname]
-      console.log("209 deleteSource ", data.sources[pathname])
-      console.log("210 state ", state)
-
-      console.log("212 ", state.unpersistedCodeMirrorDocs)
-      console.log("213 ", unpersistedCodeMirrorDocs)
+      // console.log("197 all ", data)
+      // console.log("198 state ", state)
+      // console.log("199 deleteSource ", data.sources)
+      // console.log("200 deleteSource ", data.sources[pathname])
+      // // delete data.sources[pathname]
+      // console.log("209 deleteSource ", data.sources[pathname])
+      // console.log("210 state ", state)
+      //
+      // console.log("212 ", state.unpersistedCodeMirrorDocs)
+      // console.log("213 ", unpersistedCodeMirrorDocs)
     }),
     unpersistedCodeMirrorDocs,
   }
@@ -363,6 +392,33 @@ function replaceSources(
         })),
     unpersistedCodeMirrorDocs,
   }
+
+  // var pathname: string
+  // var source
+  // var codeMirrorDoc
+  // for (let [pathname, { source, codeMirrorDoc }] of Object.entries(files)) {
+  //   pathname = pathname
+  //   source = source
+  //   codeMirrorDoc = codeMirrorDoc
+  // }
+  //
+  // console.log("396 pathname ", pathname)
+  // console.log("397 source ", source)
+  // console.log("398 codeMirrorDoc ", codeMirrorDoc)
+  // console.log("399 merge ", merge)
+  // return {
+  //   ...state,
+  //   data: {
+  //     ...state.data,
+  //     sources: {
+  //       [pathname]: source,
+  //     }
+  //   },
+  //   unpersistedCodeMirrorDocs: {
+  //     ...state.unpersistedCodeMirrorDocs,
+  //     [pathname]: codeMirrorDoc,
+  //   },
+  // }
 }
 
 export default function demoboardProjectReducer<
@@ -375,29 +431,29 @@ export default function demoboardProjectReducer<
     case 'reset':
       return action.state
 
-    case 'data.applyChanges':
-      return {
-        ...state,
-        data: applyChanges(state.data, action.changes),
-      }
-
-    case 'data.replace':
-      return {
-        ...state,
-        data: action.data,
-      }
+    // case 'data.applyChanges':
+    //   return {
+    //     ...state,
+    //     data: applyChanges(state.data, action.changes),
+    //   }
+    //
+    // case 'data.replace':
+    //   return {
+    //     ...state,
+    //     data: action.data,
+    //   }
 
     case 'tabs.close':
       return closeTab(state, state.view.selectedTab || action.pathname)
 
-    case 'tabs.open':
-      return openTab(state, action.pathname)
+    // case 'tabs.open':
+    //   return openTab(state, action.pathname)
 
     case 'tabs.select':
       return selectTab(state, action.pathname)
 
-    case 'tabs.set':
-      return setTabs(state, action.pathnames, action.selectedPathname)
+    // case 'tabs.set':
+    //   return setTabs(state, action.pathnames, action.selectedPathname)
 
     case 'sources.create':
       return openTab(
@@ -419,6 +475,7 @@ export default function demoboardProjectReducer<
     case 'sources.change':
       return changeSource(
         state,
+        action.value,
         action.pathname,
         action.codeMirrorDoc,
         action.codeMirrorChanges,
@@ -427,64 +484,64 @@ export default function demoboardProjectReducer<
     case 'sources.delete':
       return deleteSource(closeTab(state, action.pathname), action.pathname)
 
-    case 'sources.merge':
-      return replaceSources(state, action.files, {
-        merge: true,
-      })
+    // case 'sources.merge':
+    //   return replaceSources(state, action.files, {
+    //     merge: true,
+    //   })
 
-    case 'sources.replace':
-      return replaceSources(state, action.files, {
-        merge: false,
-      })
+    // case 'sources.replace':
+    //   return replaceSources(state, action.files, {
+    //     merge: false,
+    //   })
 
-    case 'activeTemplate.set':
-      return updateView(state, view => {
-        view.activeTemplate = action.activeTemplate
-      })
-
-    case 'dependencies.set':
-      return updateData(state, data => {
-        Object.assign(data.dependencies, action.dependencies)
-      })
-
-    case 'metadata.set':
-      return updateData(state, data => {
-        for (let existingKey of Object.keys(data.metadata)) {
-          if (!(existingKey in data.metadata)) {
-            delete data.metadata[existingKey]
-          }
-        }
-        for (let key of Object.keys(action.metadata)) {
-          data.metadata[key] = new Text()
-          data.metadata[key].insertAt!(0, ...action.metadata[key])
-        }
-      })
-
-    case 'panels.deprioritize':
-      return updateView(state, view => {
-        let index = view.panelPriorityOrder.indexOf(action.panel)
-        if (index !== -1) {
-          view.panelPriorityOrder.splice(index, 1)
-          view.panelPriorityOrder.unshift(action.panel)
-        }
-      })
-
-    case 'panels.prioritize':
-      return updateView(state, view => {
-        let index = view.panelPriorityOrder.indexOf(action.panel)
-        if (index !== -1) {
-          view.panelPriorityOrder.splice(index, 1)
-        }
-        view.panelPriorityOrder.push(action.panel)
-      })
-
-    case 'panels.remove':
-      return updateView(state, view => {
-        let index = view.panelPriorityOrder.indexOf(action.panel)
-        if (index !== -1) {
-          view.panelPriorityOrder.splice(index, 1)
-        }
-      })
+    // case 'activeTemplate.set':
+    //   return updateView(state, view => {
+    //     view.activeTemplate = action.activeTemplate
+    //   })
+    //
+    // case 'dependencies.set':
+    //   return updateData(state, data => {
+    //     Object.assign(data.dependencies, action.dependencies)
+    //   })
+    //
+    // case 'metadata.set':
+    //   return updateData(state, data => {
+    //     for (let existingKey of Object.keys(data.metadata)) {
+    //       if (!(existingKey in data.metadata)) {
+    //         delete data.metadata[existingKey]
+    //       }
+    //     }
+    //     for (let key of Object.keys(action.metadata)) {
+    //       data.metadata[key] = new Text()
+    //       data.metadata[key].insertAt!(0, ...action.metadata[key])
+    //     }
+    //   })
+    //
+    // case 'panels.deprioritize':
+    //   return updateView(state, view => {
+    //     let index = view.panelPriorityOrder.indexOf(action.panel)
+    //     if (index !== -1) {
+    //       view.panelPriorityOrder.splice(index, 1)
+    //       view.panelPriorityOrder.unshift(action.panel)
+    //     }
+    //   })
+    //
+    // case 'panels.prioritize':
+    //   return updateView(state, view => {
+    //     let index = view.panelPriorityOrder.indexOf(action.panel)
+    //     if (index !== -1) {
+    //       view.panelPriorityOrder.splice(index, 1)
+    //     }
+    //     view.panelPriorityOrder.push(action.panel)
+    //   })
+    //
+    // case 'panels.remove':
+    //   return updateView(state, view => {
+    //     let index = view.panelPriorityOrder.indexOf(action.panel)
+    //     if (index !== -1) {
+    //       view.panelPriorityOrder.splice(index, 1)
+    //     }
+    //   })
 
     case 'history.setLocationBar':
       return updateView(state, view => {

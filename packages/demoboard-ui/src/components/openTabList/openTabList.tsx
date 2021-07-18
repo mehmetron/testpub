@@ -88,9 +88,11 @@ export function OpenTabList({
     select: onSelect,
   }
 
-  tabs.map(pathname => (
-    console.log("92 pathname", pathname, ":93 slice:", pathname.slice(1))
-  ))
+  // tabs.map(pathname => (
+  //   console.log("92 pathname", pathname, ":93 slice:", pathname.slice(1))
+  // ))
+
+  // console.log("95 opentablist ", tab)
 
   return (
     <StyledTabList {...tab} aria-label="Open files">

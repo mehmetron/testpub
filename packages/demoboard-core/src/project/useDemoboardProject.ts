@@ -163,7 +163,10 @@ function renderSources(
   }
   let pathnames = Object.keys(sources)
   for (let pathname of pathnames) {
+    console.log("166 renderSources ", pathname)
     let source = sources[pathname]
+    console.log("168 renderSources ", source)
+    console.log("169 renderSources ", source.toString())
     let renderedSource =
       source instanceof Text || typeof source === 'string'
         ? source.toString()
@@ -177,7 +180,9 @@ function renderSources(
             source: source,
           })
     if (renderedSource !== null) {
+      console.log("182 renderedSource ", renderedSource)
       renderedSources[pathname] = renderedSource
+      console.log("184 renderedSources ", renderedSources)
     }
   }
 

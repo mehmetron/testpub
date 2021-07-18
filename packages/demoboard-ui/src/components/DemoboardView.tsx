@@ -76,6 +76,7 @@ export function DemoboardView(props: DemoboardViewProps) {
   const error = (build && build.error) || instance.error
 
   console.log("78 project", project)
+  // console.log("79 project ", project.state.unpersistedCodeMirrorDocs)
   const {
     dispatch,
     sources,
@@ -149,10 +150,11 @@ export function DemoboardView(props: DemoboardViewProps) {
           <WrappedEditor
             CodeMirror={CodeMirror}
             docName={view.selectedTab}
-            value={sources[view.selectedTab].toString()}
+            value={sources[view.selectedTab]?.toString()}
             onChange={(value, docName, changes, doc) => {
               project.dispatch({
                 type: 'sources.change',
+                value: value,
                 pathname: docName!,
                 codeMirrorChanges: changes,
                 codeMirrorDoc: doc,
